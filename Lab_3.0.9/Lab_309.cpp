@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 
 class divide_by_zero : std::exception
 {
