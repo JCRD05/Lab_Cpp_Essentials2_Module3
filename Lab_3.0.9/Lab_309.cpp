@@ -1,6 +1,6 @@
 #include <iostream>
 
-class divided_by_zero : std::exception
+class divide_by_zero : std::exception
 {
 public:
 	virtual const char* what() const noexcept 
@@ -22,10 +22,10 @@ int main()
 	double result{};
 	try
 	{
-		if (divisor == 0) { throw divided_by_zero(); }
-		result = (double)dividend / divisor;
+		if (divisor == 0) { throw divide_by_zero(); }
+		result = static_cast<double>(dividend) / divisor;
 	}
-	catch (divided_by_zero& e)
+	catch (divide_by_zero& e)
 	{
 		std::cout << e.what();
 		return 0;
