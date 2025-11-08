@@ -13,7 +13,7 @@ int main()
 		if (divisor == 0) { throw "Invalid input: you can't divide by zero"; }
 		result = dividend / divisor;
 	}
-	catch (const char* errorMsg) 
+	catch (const char* errorMsg)
 	{
 		std::cout << errorMsg;
 		return 0;
