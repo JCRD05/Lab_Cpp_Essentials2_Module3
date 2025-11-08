@@ -6,12 +6,12 @@ int main()
 {
 	constexpr int dividend = 8;
 	int divisor{};
-	int result{};
+	double result{};
 	std::cin >> divisor;
 	try
 	{
 		if (divisor == 0) { throw "Invalid input: you can't divide by zero"; }
-		result = dividend / divisor;
+		result = (double)dividend / divisor;
 	}
 	catch (const char* errorMsg)
 	{
