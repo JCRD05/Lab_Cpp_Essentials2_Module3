@@ -23,15 +23,11 @@ public:
 	Matrix(const int rowDimension, const int columnDimension) :
 		m_rowDimension(rowDimension), m_columnDimension(columnDimension)
 	{
-		try
+		if (rowDimension < 1 || columnDimension < 1)
 		{
-			if (rowDimension < 1 || columnDimension < 1)
-			{
-				throw std::invalid_argument("invalid input, the matrix dimensions should be higher than zero.");
-			}
-			m_values.resize(rowDimension * columnDimension);
+			throw std::invalid_argument("invalid input, the matrix dimensions should be higher than zero.");
 		}
-		catch (std::invalid_argument& e) { std::cout << e.what(); }
+		m_values.resize(rowDimension * columnDimension);
 	}
 
 	// Getters
