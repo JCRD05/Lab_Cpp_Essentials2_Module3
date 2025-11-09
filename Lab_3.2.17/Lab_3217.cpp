@@ -8,7 +8,7 @@ class IpAddress
 private:
 	std::array<int, 4> octets;
 
-	int parse(std::stringstream& ss)
+	int check(std::stringstream& ss)
 	{
 		std::string octet{};
 
@@ -56,7 +56,7 @@ public:
 
 		for (size_t i = 0; i < 4; i++)
 		{
-			octets[i] = parse(ss);
+			octets[i] = check(ss);
 		}
 
 		char excess{};
@@ -68,7 +68,7 @@ public:
 	{
 		if(subnetMask > 256)
 		{
-			throw std::invalid_argument("invalid input, subnest is out of range");
+			throw std::invalid_argument("invalid input, subnet is out of range");
 		}
 
 		if(!isPowerOfTwo(subnetMask))

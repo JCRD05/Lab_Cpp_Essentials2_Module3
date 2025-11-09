@@ -6,7 +6,7 @@
 class Matrix
 {
 private:
-	std::array<double,4> values;
+	std::array<double, 4> values{};
 
 public:
 	Matrix() = default;
@@ -16,12 +16,10 @@ public:
 		std::ifstream file(filename);
 		if (!file.is_open()) { throw std::runtime_error("error trying to open file: " + filename + '\n'); }
 
-		for(auto value : values)
+		for (auto& value : values)
 		{
 			if (!(file >> value)) { throw std::runtime_error("error reading from file\n"); }
 		}
-
-		file.close();
 	}
 
 	void writeToFile(const std::string& filename) 
@@ -33,14 +31,12 @@ public:
 		{
 			if (!(file << value)) { throw std::runtime_error("error writing from file\n"); }
 		}
-
-		file.close();
 	}
 };
 
 int main()
 {
-	Matrix matrix;
+	Matrix matrix{};
 	std::string loadFilename = "nonexistent_file.txt";
 	std::string saveFilename = "protected_directory/matrix.txt";
 
