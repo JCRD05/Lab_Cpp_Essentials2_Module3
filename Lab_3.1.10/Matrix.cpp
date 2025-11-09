@@ -18,20 +18,18 @@ void Matrix::print() const
 const double& Matrix::at(const int row, const int column) const
 {
 	const bool OUT_OF_RANGE = row < 1 || row > m_rowDimension || column < 1 || column > m_columnDimension;
-	if (OUT_OF_RANGE)
-	{
-		throw std::out_of_range("index out of matrix range");
-	}
+
+	if (OUT_OF_RANGE) { throw std::out_of_range("index out of matrix range"); }
+
 	return m_values[(row - 1) * m_columnDimension + (column - 1)];
 }
 
 double& Matrix::at(const int row, const int column)
 {
 	const bool OUT_OF_RANGE = row < 1 || row > m_rowDimension || column < 1 || column > m_columnDimension;
-	if (OUT_OF_RANGE)
-	{
-		throw std::out_of_range("index out of matrix range");
-	}
+
+	if (OUT_OF_RANGE) { throw std::out_of_range("index out of matrix range"); }
+
 	return m_values[(row - 1) * m_columnDimension + (column - 1)];
 }
 
@@ -39,10 +37,7 @@ void Matrix::setValue(const double value, const int row, const int column)
 {
 	const bool OUT_OF_RANGE = row < 1 || row > m_rowDimension || column < 1 || column > m_columnDimension;
 
-	if (OUT_OF_RANGE)
-	{
-		throw std::out_of_range("index out of matrix range");
-	}
+	if (OUT_OF_RANGE) { throw std::out_of_range("index out of matrix range"); }
 
 	m_values[(row - 1) * m_columnDimension + (column - 1)] = value;
 }
@@ -76,10 +71,7 @@ void Matrix::fill(const Matrix& other)
 {
 	const bool DIFFERENT_DIMENSIONS = m_rowDimension != other.getRowDimension() || m_columnDimension != other.getColumnDimension();
 
-	if (DIFFERENT_DIMENSIONS)
-	{
-		throw matrix_exception("different matrices dimensions");
-	}
+	if (DIFFERENT_DIMENSIONS) { throw matrix_exception("different matrices dimensions"); }
 
 	m_values = other.m_values;
 }
@@ -88,10 +80,7 @@ void Matrix::add(const Matrix& other)
 {
 	const bool DIFFERENT_DIMENSIONS = m_rowDimension != other.getRowDimension() || m_columnDimension != other.getColumnDimension();
 
-	if (DIFFERENT_DIMENSIONS)
-	{
-		throw matrix_exception("different matrices dimensions");
-	}
+	if (DIFFERENT_DIMENSIONS) { throw matrix_exception("different matrices dimensions"); }
 
 	for (size_t i = 0; i < m_values.size(); ++i)
 	{

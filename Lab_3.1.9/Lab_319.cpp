@@ -30,10 +30,7 @@ int main()
 		std::cout << "square area: " << squareArea(side) << '\n';
 		std::cout << "rectangle area: " << rectangleArea(base, height) << '\n';
 	}
-	catch (negative_area& e)
-	{
-		std::cout << e.what();
-	}
+	catch (negative_area& e) { std::cout << e.what(); }
 }
 
 double squareArea(const int side)

@@ -36,10 +36,7 @@ int main()
 		result = divisionB(dividend, divisor);
 		std::cout << '\n' << result;
 	}
-	catch (divide_by_zero& e)
-	{
-		std::cout << '\n' << e.what();
-	}
+	catch (divide_by_zero& e) { std::cout << '\n' << e.what(); }
 }
 
 double divisionA(const int dividend, const int divisor)
@@ -49,10 +46,7 @@ double divisionA(const int dividend, const int divisor)
 		if (divisor == 0) { throw divide_by_zero(); }
 		return static_cast<double>(dividend) / divisor;
 	}
-	catch (divide_by_zero& e)
-	{
-		std::cout << e.what();
-	}
+	catch (divide_by_zero& e) { std::cout << e.what(); }
 }
 
 double divisionB(const int dividend, const int divisor)

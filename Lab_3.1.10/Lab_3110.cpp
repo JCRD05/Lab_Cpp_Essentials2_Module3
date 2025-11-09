@@ -16,26 +16,17 @@ int main()
 	{
 		(matrix1 + matrix2).print();
 	}
-	catch (const std::exception& e)
-	{
-		std::cout << e.what();
-	}
+	catch (const std::exception& e) { std::cout << e.what(); }
 
 	try
 	{
 		(matrix1 + matrix3).print();
 	}
-	catch (const std::exception& e)
-	{
-		std::cout << e.what() << '\n';
-	}
+	catch (const std::exception& e) { std::cout << e.what() << '\n'; }
 
 	try
 	{
 		(matrix2 + matrix3).print();
 	}
-	catch (const std::exception& e)
-	{
-		std::cout << e.what() << '\n';
-	}
+	catch (const std::exception& e) { std::cout << e.what() << '\n'; }
 }

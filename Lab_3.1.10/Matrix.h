@@ -31,10 +31,7 @@ public:
 			}
 			m_values.resize(rowDimension * columnDimension);
 		}
-		catch (std::invalid_argument& e)
-		{
-			std::cout << e.what();
-		}
+		catch (std::invalid_argument& e) { std::cout << e.what(); }
 	}
 
 	// Getters
