@@ -33,18 +33,6 @@ A continuación se listan los proyectos y ejercicios contenidos en este reposito
 
 ---
 
-## Compilación y Ejecución
-
-El código de cada laboratorio es autocontenido. Para compilar y ejecutar cualquiera de los ejercicios, se puede utilizar un compilador de C++ estándar como g++.
-
-**Ejemplo de compilación con g++:**
-```bash
-# Para un proyecto con varios archivos .cpp
-g++ main.cpp Clase1.cpp Clase2.cpp -o ejecutable
-
-# Para un proyecto simple
-g++ main.cpp -o ejecutable
-
 Conceptos Clave Practicados
 A lo largo de estos laboratorios, se aplican los siguientes conceptos clave del manejo de excepciones:
 
